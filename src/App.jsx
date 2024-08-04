@@ -64,25 +64,20 @@ function AccordionComponent({ accordion }) {
     setIsOpen((isOpen) => !isOpen);
   }
   return (
-    <div className="flex flex-col gap-4 text-sm border-b mb-2">
+    <div
+      onClick={handleState}
+      className="cursor-pointer flex flex-col gap-4 text-sm border-b mb-2"
+    >
       <div className="flex justify-between">
         <p className="font-bold">{accordion.question}</p>
         {isOpen ? (
-          <img
-            onClick={handleState}
-            className="cursor-pointer"
-            src={iconminus}
-          />
+          <img className="cursor-pointer" src={iconminus} />
         ) : (
-          <img
-            onClick={handleState}
-            className="cursor-pointer"
-            src={iconplus}
-          />
+          <img className="cursor-pointer" src={iconplus} />
         )}
       </div>
       {isOpen ? (
-        <p className="text-dark-purple font-semibold mb-2">
+        <p className="text-grayish-purple font-semibold mb-2">
           {accordion.answer}
         </p>
       ) : null}
