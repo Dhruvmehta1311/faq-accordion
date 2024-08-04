@@ -39,7 +39,7 @@ function AccordionSkeleton({ accordionData }) {
       <img className="w-full hidden  sm:block" src={backgroundpatterndesktop} />
       <img className="sm:hidden  w-full" src={backgroundpatternmobile} />
       <div className="bg-light-pink min-h-screen relative flex flex-col items-center">
-        <div className="bg-white rounded-lg absolute top-[-15%] p-8 flex flex-col gap-12 max-w-[650px] w-[90%]">
+        <div className="bg-white rounded-lg absolute top-[-28%] p-8 flex flex-col gap-12 max-w-[650px] w-[90%]">
           <div className="flex gap-4">
             <img src={iconstar} />
             <p className="font-bold text-5xl ">FAQs</p>
@@ -59,13 +59,12 @@ function AccordionSkeleton({ accordionData }) {
 }
 
 function AccordionComponent({ accordion }) {
-  const [isOpen, setIsOpen] = useState("false");
-
+  const [isOpen, setIsOpen] = useState(false);
   function handleState() {
     setIsOpen((isOpen) => !isOpen);
   }
   return (
-    <div className="flex flex-col gap-4 text-sm border-b-2 ">
+    <div className="flex flex-col gap-4 text-sm border-b mb-2">
       <div className="flex justify-between">
         <p className="font-bold">{accordion.question}</p>
         {isOpen ? (
@@ -82,7 +81,11 @@ function AccordionComponent({ accordion }) {
           />
         )}
       </div>
-      <p className="text-dark-purple font-semibold ">{accordion.answer}</p>
+      {isOpen ? (
+        <p className="text-dark-purple font-semibold mb-2">
+          {accordion.answer}
+        </p>
+      ) : null}
     </div>
   );
 }
