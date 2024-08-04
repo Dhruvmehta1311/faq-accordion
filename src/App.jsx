@@ -39,7 +39,7 @@ function AccordionSkeleton({ accordionData }) {
       <img className="w-full hidden  sm:block" src={backgroundpatterndesktop} />
       <img className="sm:hidden  w-full" src={backgroundpatternmobile} />
       <div className="bg-light-pink min-h-screen relative flex flex-col items-center">
-        <div className="bg-white rounded-lg absolute top-[-28%] p-8 flex flex-col gap-12 max-w-[650px] w-[90%]">
+        <div className="bg-white rounded-lg absolute top-[-15%] sm:top-[-28%] p-8 flex flex-col gap-12 max-w-[650px] w-[90%]">
           <div className="flex gap-4">
             <img src={iconstar} />
             <p className="font-bold text-5xl ">FAQs</p>
