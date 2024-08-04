@@ -59,12 +59,13 @@ function AccordionSkeleton({ accordionData }) {
 
 function AccordionComponent({ accordion }) {
   return (
-    <div className="flex flex-col gap-4 text-sm">
+    <div className="flex flex-col gap-4 text-sm border-b-2 ">
       <div className="flex justify-between">
         <p className="font-bold">{accordion.question}</p>
         <img className="" src="./src/assets/images/icon-minus.svg" />
+        <img className="" src="./src/assets/images/icon-plus.svg" />
       </div>
-      <p className="text-dark-purple font-semibold">{accordion.answer}</p>
+      <p className="text-dark-purple font-semibold ">{accordion.answer}</p>
     </div>
   );
 }
