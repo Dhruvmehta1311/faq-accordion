@@ -1,4 +1,9 @@
 import { useState } from "react";
+import backgroundpatterndesktop from "./assets/images/background-pattern-desktop.svg";
+import backgroundpatternmobile from "./assets/images/background-pattern-mobile.svg";
+import iconplus from "./assets/images/icon-plus.svg";
+import iconminus from "./assets/images/icon-minus.svg";
+import iconstar from "./assets/images/icon-star.svg";
 
 /* eslint-disable react/prop-types */
 const accordionData = [
@@ -31,18 +36,12 @@ function App() {
 function AccordionSkeleton({ accordionData }) {
   return (
     <div>
-      <img
-        className="w-full hidden  sm:block"
-        src="./src/assets/images/background-pattern-desktop.svg"
-      />
-      <img
-        className="sm:hidden  w-full"
-        src="./src/assets/images/background-pattern-mobile.svg"
-      />
+      <img className="w-full hidden  sm:block" src={backgroundpatterndesktop} />
+      <img className="sm:hidden  w-full" src={backgroundpatternmobile} />
       <div className="bg-light-pink min-h-screen relative flex flex-col items-center">
         <div className="bg-white rounded-lg absolute top-[-15%] p-8 flex flex-col gap-12 max-w-[650px] w-[90%]">
           <div className="flex gap-4">
-            <img src="./src/assets/images/icon-star.svg" />
+            <img src={iconstar} />
             <p className="font-bold text-5xl ">FAQs</p>
           </div>
           <div className="flex flex-col gap-4">
@@ -73,13 +72,13 @@ function AccordionComponent({ accordion }) {
           <img
             onClick={handleState}
             className="cursor-pointer"
-            src="./src/assets/images/icon-minus.svg"
+            src={iconminus}
           />
         ) : (
           <img
             onClick={handleState}
             className="cursor-pointer"
-            src="./src/assets/images/icon-plus.svg"
+            src={iconplus}
           />
         )}
       </div>
