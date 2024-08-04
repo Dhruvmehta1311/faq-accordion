@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /* eslint-disable react/prop-types */
 const accordionData = [
   {
@@ -58,12 +60,28 @@ function AccordionSkeleton({ accordionData }) {
 }
 
 function AccordionComponent({ accordion }) {
+  const [isOpen, setIsOpen] = useState("false");
+
+  function handleState() {
+    setIsOpen((isOpen) => !isOpen);
+  }
   return (
     <div className="flex flex-col gap-4 text-sm border-b-2 ">
       <div className="flex justify-between">
         <p className="font-bold">{accordion.question}</p>
-        <img className="" src="./src/assets/images/icon-minus.svg" />
-        <img className="" src="./src/assets/images/icon-plus.svg" />
+        {isOpen ? (
+          <img
+            onClick={handleState}
+            className="cursor-pointer"
+            src="./src/assets/images/icon-minus.svg"
+          />
+        ) : (
+          <img
+            onClick={handleState}
+            className="cursor-pointer"
+            src="./src/assets/images/icon-plus.svg"
+          />
+        )}
       </div>
       <p className="text-dark-purple font-semibold ">{accordion.answer}</p>
     </div>
